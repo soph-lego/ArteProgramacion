@@ -9,6 +9,12 @@ placa1 = cv2.imread("C:\\Users\\sophi\\Desktop\\TEC\\semanaTecProgra\\placa_q.jp
 placa2 = cv2.imread("C:\\Users\\sophi\\Desktop\\TEC\\semanaTecProgra\\placa_2.jpg")
 
 def leerPlaca(placa):
+    """
+    función hecha para leer el texto de una imagen de una placa por medio de
+    OCR y openCV.
+    input: foto de la placa
+    output: string del texto de la placa
+    """
     #ponemos a escala de grises
     gris = cv2.cvtColor(placa, cv2.COLOR_BGR2GRAY)
     
