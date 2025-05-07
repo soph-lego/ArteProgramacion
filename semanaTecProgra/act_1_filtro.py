@@ -17,8 +17,11 @@ def leerPlaca(placa):
     #ponemos a escala de grises
     gris = cv2.cvtColor(placa, cv2.COLOR_BGR2GRAY)
     
-    #le ponemos rudio
-    _, mask = cv2.threshold(gris, 130, 255, cv2.THRESH_BINARY_INV)
+    #umbral adaptativo en vez de fijo
+    mask = cv2.adaptiveThreshold(
+        gris, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
+        cv2.THRESH_BINARY_INV, 11, 2
+    )
 
     #filtro gaussiano
     blur = cv2.GaussianBlur(mask, (13, 13), 0)
