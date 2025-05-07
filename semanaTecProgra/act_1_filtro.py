@@ -1,6 +1,5 @@
 #Sophia Leñero Gómez A01639462
 import cv2
-import numpy as np
 import easyocr
 
 lector = easyocr.Reader(['es'])
